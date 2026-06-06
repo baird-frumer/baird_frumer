@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>我的主页 | 图片与寄语</title>
+    <style>
+        /* 重置默认边距，使用优雅的现代字体 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* 柔和的背景渐变，干净且有层次感 */
+            background: linear-gradient(145deg, #f8fafc 0%, #eef2f5 100%);
+            font-family: system-ui, 'Segoe UI', 'Helvetica Neue', 'Noto Sans', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        /* 主卡片容器：优雅磨砂玻璃质感 + 细腻阴影 */
+        .card {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem 1.8rem 2.5rem 1.8rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+
+        /* 图片容器：保持比例且圆润现代 */
+        .image-wrapper {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.15);
+            background: #fff;
+            transition: transform 0.2s;
+        }
+
+        .image-wrapper:hover {
+            transform: scale(1.01);
+        }
+
+        /* 图片本身：响应式，保持原始比例但不超出容器 */
+        .hero-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            /* 保证图片不拉伸，自然展示 */
+            max-height: 480px;
+            transition: opacity 0.3s;
+        }
+
+        /* 文字区域排版 */
+        .message-section {
+            padding: 0 0.5rem;
+        }
+
+        /* 主标题/引言 (那段话的主视觉) */
+        .poem-text {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.35;
+            color: #1e293b;
+            background: linear-gradient(135deg, #1f2b3c, #2c3e50);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        /* 描述或副文本，更有温度 */
+        .description {
+            font-size: 1.1rem;
+            color: #334155;
+            margin-top: 0.75rem;
+            border-top: 2px solid #e2e8f0;
+            display: inline-block;
+            padding-top: 1rem;
+            font-weight: 400;
+            max-width: 90%;
+            line-height: 1.5;
+        }
+
+        /* 落款或小标记，增加精致感 */
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #6c7a91;
+            letter-spacing: 0.3px;
+            border-top: 1px solid #e2edf2;
+            padding-top: 1.2rem;
+            display: inline-block;
+            width: auto;
+        }
+
+        /* 响应式：手机端略微缩小字体和内边距 */
+        @media (max-width: 580px) {
+            .card {
+                padding: 1.5rem 1.2rem 2rem;
+            }
+            .poem-text {
+                font-size: 1.5rem;
+            }
+            .description {
+                font-size: 1rem;
+            }
+            .image-wrapper {
+                border-radius: 1.5rem;
+            }
+        }
+
+        /* 针对深色模式做优雅适配（可选），尊重系统偏好 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(145deg, #14181f 0%, #0f1219 100%);
+            }
+            .card {
+                background: rgba(25, 30, 38, 0.88);
+                backdrop-filter: blur(3px);
+                border-color: rgba(70, 85, 105, 0.4);
+                box-shadow: 0 25px 40px -12px black;
+            }
+            .poem-text {
+                background: linear-gradient(135deg, #e6edf5, #cbdbe6);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+            .description {
+                color: #cbd5e6;
+                border-top-color: #2d3a48;
+            }
+            .footer-note {
+                color: #8e9daf;
+                border-top-color: #2d3a48;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- 图片区域：仅包含一张图片 -->
+        <div class="image-wrapper">
+            <img class="hero-img" 
+                 src="https://picsum.photos/id/104/800/500" 
+                 alt="宁静的自然风景：充满生命力的山脉与湖泊"
+                 title="每日一景 · 静谧时光">
+            <!-- 注：以上图片来自免费图库loremflick (picsum)，展示自然唯美画面。可替换为你自己的图片URL -->
+        </div>
+
+        <!-- 文字区域：一段话核心内容 -->
+        <div class="message-section">
+            <div class="poem-text">
+            
