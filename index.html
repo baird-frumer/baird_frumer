@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>我的主页 | 图片与寄语</title>
+    <title>baird的主页 </title>
     <style>
         /* 重置默认边距，使用优雅的现代字体 */
         * {
@@ -32,6 +32,15 @@
             /* 添加半透明黑色层，让背景图片变暗，上面的文字更清楚（可选，不需要可以删掉下一行） */
             background-blend-mode: overlay;
             padding-bottom:120vh;
+            .hero-img {
+    width: 100%;
+    height: 0;
+    /* 关键：高度由 padding-bottom 决定，实现精确比例裁剪 */
+    padding-bottom: 90%;  /* 100% - 10% = 90%，即裁掉底部10% */
+    object-fit: cover;
+    object-position: top;  /* 从顶部开始显示，底部自然被裁掉 */
+    display: block;
+            }
         }
 
         /* 可选：如果你觉得背景图片太亮导致文字看不清，可以用这个伪元素加一层半透明遮罩 */
